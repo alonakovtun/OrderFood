@@ -49,6 +49,8 @@ dependencies {
     implementation 'com.hbb20:ccp:2.5.0'
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.3.+'
+
 
     //For bottom navBar
     implementation 'com.google.android.material:material:1.1.0'

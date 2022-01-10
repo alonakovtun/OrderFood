@@ -18,4 +18,12 @@
         <item>Shipper 2</item>
     </string-array>
 
+    <string-array name="DishName">
+        <item>DishName 1</item>
+        <item>DishName 2</item>
+        <item>DishName 3</item>
+        <item>DishName 4</item>
+        <item>DishName 5</item>
+    </string-array>
+
 </resources>

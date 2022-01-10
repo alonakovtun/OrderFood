@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.foodorder.MainMenu;
 import com.example.foodorder.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -43,7 +44,7 @@ public class ChefHomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_chef_home, null);
         getActivity().setTitle("Home");
-//        setHasOptionsMenu(true);
+        setHasOptionsMenu(true);
 //        recyclerView = v.findViewById(R.id.Recycle_menu);
 //        recyclerView.setHasFixedSize(true);
 //        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -97,31 +98,29 @@ public class ChefHomeFragment extends Fragment {
 //    }
 //
 //
-//    @Override
-//    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-//        inflater.inflate(R.menu.logout, menu);
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//
-//        int idd = item.getItemId();
-//        if (idd == R.id.LogOut) {
-//            Logout();
-//            return true;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
-//
-//    private void Logout() {
-//
-//        FirebaseAuth.getInstance().signOut();
-//        Intent intent = new Intent(getActivity(), MainMenu.class);
-//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
-//        startActivity(intent);
-//
-//    }
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.logout, menu);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
 
+        int idd = item.getItemId();
+        if (idd == R.id.LogOut) {
+            Logout();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void Logout() {
+
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(getActivity(), MainMenu.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
+        startActivity(intent);
+
+    }
 
 }

@@ -16,8 +16,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.foodorder.Chef;
 import com.example.foodorder.MainMenu;
 import com.example.foodorder.R;
+import com.example.foodorder.UpdateDishModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -34,7 +36,7 @@ public class ChefHomeFragment extends Fragment {
 
 //    RecyclerView recyclerView;
 //    private List<UpdateDishModel> updateDishModelList;
-//    private ChefhomeAdapter adapter;
+//    private ChefHomeAdapter adapter;
 //    DatabaseReference dataaa;
 //    private String State, City, Sub;
 
@@ -60,7 +62,7 @@ public class ChefHomeFragment extends Fragment {
 //                Sub = chefc.getSuburban();
 //                chefDishes();
 //            }
-
+//
 //            @Override
 //            public void onCancelled(@NonNull DatabaseError databaseError) {
 //
@@ -85,7 +87,7 @@ public class ChefHomeFragment extends Fragment {
 //                    updateDishModelList.add(updateDishModel);
 //
 //                }
-//                adapter = new ChefhomeAdapter(getContext(), updateDishModelList);
+//                adapter = new ChefHomeAdapter(getContext(), updateDishModelList);
 //                recyclerView.setAdapter(adapter);
 //            }
 //
@@ -96,8 +98,8 @@ public class ChefHomeFragment extends Fragment {
 //        });
 //
 //    }
-//
-//
+
+
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.logout, menu);

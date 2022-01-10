@@ -28,22 +28,22 @@ public class ChefFoodPanel_BottomNavigation extends AppCompatActivity implements
         setContentView(R.layout.activity_chef_food_panel_bottom_navigation);
         BottomNavigationView navigationView = findViewById(R.id.chef_bottom_navigation);
         navigationView.setOnNavigationItemSelectedListener(this);
-//        navigationView.setOnNavigationItemSelectedListener(this);
+        navigationView.setOnNavigationItemSelectedListener(this);
 //        UpdateToken();
-//        String name = getIntent().getStringExtra("PAGE");
-//        if (name != null) {
-//            if (name.equalsIgnoreCase("Orderpage")) {
-//                loadcheffragment(new ChefPendingOrderFragment());
-//            } else if (name.equalsIgnoreCase("Confirmpage")) {
-//                loadcheffragment(new ChefOrderFragment());
-//            } else if (name.equalsIgnoreCase("AcceptOrderpage")) {
-//                loadcheffragment(new ChefHomeFragment());
-//            } else if (name.equalsIgnoreCase("Deliveredpage")) {
-//                loadcheffragment(new ChefHomeFragment());
-//            }
-//        } else {
-//            loadcheffragment(new ChefHomeFragment());
-//        }
+        String name = getIntent().getStringExtra("PAGE");
+        if (name != null) {
+            if (name.equalsIgnoreCase("Orderpage")) {
+                loadcheffragment(new ChefPendingOrderFragment());
+            } else if (name.equalsIgnoreCase("Confirmpage")) {
+                loadcheffragment(new ChefOrderFragment());
+            } else if (name.equalsIgnoreCase("AcceptOrderpage")) {
+                loadcheffragment(new ChefHomeFragment());
+            } else if (name.equalsIgnoreCase("Deliveredpage")) {
+                loadcheffragment(new ChefHomeFragment());
+            }
+        } else {
+            loadcheffragment(new ChefHomeFragment());
+        }
     }
 
 //    private void UpdateToken() {

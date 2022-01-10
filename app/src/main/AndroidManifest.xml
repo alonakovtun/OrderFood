@@ -10,6 +10,42 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodOrder">
         <activity
+            android:name=".Delivery_SendOtp"
+            android:exported="false" />
+        <activity
+            android:name=".Delivery_ForgotPassword"
+            android:exported="false" />
+        <activity
+            android:name=".Delivery_FoodPanelBottomNavigation"
+            android:exported="false" />
+        <activity
+            android:name=".Delivery_VerifyPhone"
+            android:exported="false" />
+        <activity
+            android:name=".ForgotPassword"
+            android:exported="false" />
+        <activity
+            android:name=".CustomerFoodPanel_BottomNavigation"
+            android:exported="false" />
+        <activity
+            android:name=".sendotp"
+            android:exported="false" />
+        <activity
+            android:name=".VerifyPhone"
+            android:exported="false" />
+        <activity
+            android:name=".Chefsendotp"
+            android:exported="false" />
+        <activity
+            android:name=".ChefForgotPassword"
+            android:exported="false" />
+        <activity
+            android:name=".ChefFoodPanel_BottomNavigation"
+            android:exported="false" />
+        <activity
+            android:name=".ChefVerifyPhone"
+            android:exported="false" />
+        <activity
             android:name=".Delivery_Login"
             android:exported="false" />
         <activity

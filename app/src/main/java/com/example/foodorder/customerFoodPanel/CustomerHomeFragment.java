@@ -1,5 +1,6 @@
 package com.example.foodorder.customerFoodPanel;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -19,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.foodorder.Customer;
+import com.example.foodorder.MainMenu;
 import com.example.foodorder.R;
 import com.example.foodorder.UpdateDishModel;
 import com.google.firebase.auth.FirebaseAuth;
@@ -145,6 +147,31 @@ public class CustomerHomeFragment extends Fragment implements SwipeRefreshLayout
         }
         adapter = new CustomerHomeAdapter(getContext(), mylist);
         recyclerView.setAdapter(adapter);
+
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.logout, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int idd = item.getItemId();
+        if (idd == R.id.LogOut) {
+            Logout();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void Logout() {
+
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(getActivity(), MainMenu.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
+        startActivity(intent);
 
     }
 

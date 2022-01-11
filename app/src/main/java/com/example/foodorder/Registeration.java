@@ -79,7 +79,6 @@ public class Registeration extends AppCompatActivity {
             Signin = (Button) findViewById(R.id.button);
             statespin = (Spinner) findViewById(R.id.Statee);
             City = (Spinner) findViewById(R.id.Citys);
-            Suburban = (Spinner) findViewById(R.id.Suburban);
             Mobileno = (TextInputLayout) findViewById(R.id.Mobilenumber);
             Cpp = (CountryCodePicker) findViewById(R.id.CountryCode);
             Email = (Button) findViewById(R.id.emaill);

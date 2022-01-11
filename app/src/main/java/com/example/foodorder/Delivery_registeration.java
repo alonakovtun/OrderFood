@@ -67,7 +67,6 @@ public class Delivery_registeration extends AppCompatActivity {
         statespin = (Spinner) findViewById(R.id.State);
         Cityspin = (Spinner) findViewById(R.id.City);
         Emaill = (Button) findViewById(R.id.emaillid);
-        Suburban = (Spinner) findViewById(R.id.suburban);
         signup = (Button) findViewById(R.id.Signupp);
         Phone = (Button) findViewById(R.id.Phonenumber);
         Cpp = (CountryCodePicker) findViewById(R.id.ctrycode);

@@ -47,18 +47,18 @@ public class CustomerHomeAdapter extends RecyclerView.Adapter<CustomerHomeAdapte
         updateDishModel.getRandomUID();
         updateDishModel.getChefId();
         holder.price.setText("Price: ₹ " + updateDishModel.getPrice());
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                Intent intent=new Intent(mcontext,OrderDish.class);
-//                intent.putExtra("FoodMenu",updateDishModel.getRandomUID());
-//                intent.putExtra("ChefId",updateDishModel.getChefId());
-//
-//
-//                mcontext.startActivity(intent);
-//            }
-//        });
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(mcontext,OrderDish.class);
+                intent.putExtra("FoodMenu",updateDishModel.getRandomUID());
+                intent.putExtra("ChefId",updateDishModel.getChefId());
+
+
+                mcontext.startActivity(intent);
+            }
+        });
     }
 
     @Override

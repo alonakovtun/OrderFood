@@ -34,11 +34,11 @@ import java.util.List;
 public class ChefHomeFragment extends Fragment {
 
 
-//    RecyclerView recyclerView;
-//    private List<UpdateDishModel> updateDishModelList;
-//    private ChefHomeAdapter adapter;
-//    DatabaseReference dataaa;
-//    private String State, City, Sub;
+    RecyclerView recyclerView;
+    private List<UpdateDishModel> updateDishModelList;
+    private ChefHomeAdapter adapter;
+    DatabaseReference dataaa;
+    private String State, City, Sub;
 
 
     @Nullable
@@ -47,57 +47,57 @@ public class ChefHomeFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_chef_home, null);
         getActivity().setTitle("Home");
         setHasOptionsMenu(true);
-//        recyclerView = v.findViewById(R.id.Recycle_menu);
-//        recyclerView.setHasFixedSize(true);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-//        updateDishModelList = new ArrayList<>();
-//        String userid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-//        dataaa = FirebaseDatabase.getInstance().getReference("Chef").child(userid);
-//        dataaa.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                Chef chefc = dataSnapshot.getValue(Chef.class);
-//                State = chefc.getState();
-//                City = chefc.getCity();
-//                Sub = chefc.getSuburban();
-//                chefDishes();
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
+        recyclerView = v.findViewById(R.id.Recycle_menu);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        updateDishModelList = new ArrayList<>();
+        String userid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        dataaa = FirebaseDatabase.getInstance().getReference("Chef").child(userid);
+        dataaa.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Chef chefc = dataSnapshot.getValue(Chef.class);
+                State = chefc.getState();
+                City = chefc.getCity();
+                Sub = chefc.getSuburban();
+                chefDishes();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
 
         return v;
     }
 
 
-//    private void chefDishes() {
-//
-//        String useridd = FirebaseAuth.getInstance().getCurrentUser().getUid();
-//        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("FoodSupplyDetails").child(State).child(City).child(Sub).child(useridd);
-//        databaseReference.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                updateDishModelList.clear();
-//                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-//                    UpdateDishModel updateDishModel = snapshot.getValue(UpdateDishModel.class);
-//                    updateDishModelList.add(updateDishModel);
-//
-//                }
-//                adapter = new ChefHomeAdapter(getContext(), updateDishModelList);
-//                recyclerView.setAdapter(adapter);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-//
-//    }
+    private void chefDishes() {
+
+        String useridd = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("FoodSupplyDetails").child(useridd);
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                updateDishModelList.clear();
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    UpdateDishModel updateDishModel = snapshot.getValue(UpdateDishModel.class);
+                    updateDishModelList.add(updateDishModel);
+
+                }
+                adapter = new ChefHomeAdapter(getContext(), updateDishModelList);
+                recyclerView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
 
 
     @Override

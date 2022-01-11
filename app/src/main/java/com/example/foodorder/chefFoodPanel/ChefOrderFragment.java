@@ -15,31 +15,31 @@ import com.example.foodorder.R;
 
 public class ChefOrderFragment extends Fragment {
 
-//    TextView OrdertobePrepare, Preparedorders;
+    TextView OrdertobePrepare, Preparedorders;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         getActivity().setTitle("New Orders");
         View v = inflater.inflate(R.layout.fragment_chef_orders, null);
-//        OrdertobePrepare=(TextView)v.findViewById(R.id.ordertobe);
-//        Preparedorders=(TextView)v.findViewById(R.id.prepareorder);
-//
-//        OrdertobePrepare.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i=new Intent(getContext(),ChefOrderTobePrepared.class);
-//                startActivity(i);
-//            }
-//        });
-//
-//        Preparedorders.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent=new Intent(getContext(),ChefPreparedOrder.class);
-//                startActivity(intent);
-//            }
-//        });
+        OrdertobePrepare=(TextView)v.findViewById(R.id.ordertobe);
+        Preparedorders=(TextView)v.findViewById(R.id.prepareorder);
+
+        OrdertobePrepare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getContext(),ChefOrderTobePrepared.class);
+                startActivity(i);
+            }
+        });
+
+        Preparedorders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getContext(),ChefPreparedOrder.class);
+                startActivity(intent);
+            }
+        });
 
 
         return v;

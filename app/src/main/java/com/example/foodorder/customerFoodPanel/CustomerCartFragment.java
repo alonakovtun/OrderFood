@@ -141,7 +141,7 @@ public class CustomerCartFragment extends Fragment {
                                                 ss = dataSnapshot.getValue(String.class);
                                             }
 
-                                            if (ss.trim().equalsIgnoreCase("false") || ss.trim().equalsIgnoreCase("")) {
+
 
                                                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                                                 builder.setTitle("Enter Address");
@@ -331,9 +331,7 @@ public class CustomerCartFragment extends Fragment {
                                                 AlertDialog aler = builder.create();
                                                 aler.show();
 
-                                            } else {
-                                                ReusableCodeForAll.ShowAlert(getContext(), "Error", "It seems you have already placed the order, So you cannot place another order until the delivery of first order");
-                                            }
+
 
                                         }
 

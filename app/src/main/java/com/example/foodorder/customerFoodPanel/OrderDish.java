@@ -51,7 +51,7 @@ public class OrderDish extends AppCompatActivity {
 
         Foodname = (TextView) findViewById(R.id.food_name);
         ChefName = (TextView) findViewById(R.id.chef_name);
-        ChefLoaction = (TextView) findViewById(R.id.chef_location);
+//        ChefLoaction = (TextView) findViewById(R.id.chef_location);
         FoodQuantity = (TextView) findViewById(R.id.food_quantity);
         FoodPrice = (TextView) findViewById(R.id.food_price);
         FoodDescription = (TextView) findViewById(R.id.food_description);
@@ -94,7 +94,7 @@ public class OrderDish extends AppCompatActivity {
                                 String name = "<b>" + "Chef Name: " + "</b>" + chef.getFname() + " " + chef.getLname();
                                 ChefName.setText(Html.fromHtml(name));
                                 String loc = "<b>" + "Location: " + "</b>" + chef.getSuburban();
-                                ChefLoaction.setText(Html.fromHtml(loc));
+//                                ChefLoaction.setText(Html.fromHtml(loc));
                                 custID = FirebaseAuth.getInstance().getCurrentUser().getUid();
                                 databaseReference = FirebaseDatabase.getInstance().getReference("Cart").child("CartItems").child(custID).child(RandomId);
                                 databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {

@@ -72,9 +72,9 @@ public class CustomerHomeFragment extends Fragment implements SwipeRefreshLayout
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         Customer cust = dataSnapshot.getValue(Customer.class);
-                        State = cust.getState();
-                        City = cust.getCity();
-                        Sub = cust.getSuburban();
+//                        State = cust.getState();
+//                        City = cust.getCity();
+//                        Sub = cust.getSuburban();
                         customermenu();
                     }
 

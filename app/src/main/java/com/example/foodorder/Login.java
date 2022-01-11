@@ -22,8 +22,7 @@ public class Login extends AppCompatActivity {
 
 
     TextInputLayout email, pass;
-    Button Signout,SignInphone;
-    TextView Forgotpassword;
+    Button Signout,SignUp;
     TextView txt;
     FirebaseAuth FAuth;
     String em;
@@ -38,8 +37,7 @@ public class Login extends AppCompatActivity {
             pass = (TextInputLayout) findViewById(R.id.Lpassword);
             Signout = (Button) findViewById(R.id.button4);
             txt = (TextView) findViewById(R.id.textView3);
-            Forgotpassword=(TextView)findViewById(R.id.forgotpass);
-            SignInphone=(Button)findViewById(R.id.btnphone);
+            SignUp = (Button) findViewById(R.id.btn_sign_up);
 
             FAuth = FirebaseAuth.getInstance();
 
@@ -83,29 +81,12 @@ public class Login extends AppCompatActivity {
                 }
             });
 
-            txt.setOnClickListener(new View.OnClickListener() {
+            SignUp.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-                    Intent Register = new Intent(Login.this, Registeration.class);
-                    startActivity(Register);
-
-                }
-            });
-
-            Forgotpassword.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent a=new Intent(Login.this,ForgotPassword.class);
-                    startActivity(a);
-
-                }
-            });
-            SignInphone.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent=new Intent(Login.this,LoginPhone.class);
-                    startActivity(intent);
+                    Intent q = new Intent(Login.this, Registeration.class);
+                    startActivity(q);
+                    finish();
                 }
             });
         }catch (Exception e){

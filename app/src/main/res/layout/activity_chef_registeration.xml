@@ -70,7 +70,6 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/ic_baseline_email_24"
                     android:drawablePadding="10dp"
                     android:hint="Email id"
                     android:inputType="textEmailAddress" />
@@ -273,26 +272,14 @@
                     android:id="@+id/emaill"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="90dp"
                     android:background="@drawable/btnred"
                     android:drawableLeft="@drawable/ic_baseline_email_24"
+                    android:gravity="center"
+
                     android:padding="10dp"
                     android:text="Email"
                     android:textColor="@color/white" />
-
-                <Button
-                    android:id="@+id/phone"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@drawable/btnblue"
-                    android:drawableLeft="@drawable/ic_baseline_local_phone_24"
-                    android:drawablePadding="5dp"
-                    android:padding="10dp"
-                    android:text="Phone"
-                    android:textColor="@color/white" />
-
 
             </LinearLayout>
 

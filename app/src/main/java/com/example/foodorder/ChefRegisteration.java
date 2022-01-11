@@ -34,15 +34,9 @@ public class ChefRegisteration extends AppCompatActivity {
     String[] State2 = {"City1", "City2", "City3"};
 
 
-    String[] State3 = {"City1", "City2","City3", "City4", "City5", "City6"};
-
-
-    String[] State4 = {"City1", "City2", " City3", "City4", "City5"};
-    String[] State5 = {"City1", "City2"};
-
     TextInputLayout Fname, Lname, Email, Pass, cfpass, mobileno, houseno, area, postcode;
     Spinner statespin, Cityspin;
-    Button signup, Emaill, Phone;
+    Button signup, Emaill;
     CountryCodePicker Cpp;
     FirebaseAuth FAuth;
     DatabaseReference databaseReference;
@@ -80,7 +74,6 @@ public class ChefRegisteration extends AppCompatActivity {
         Cityspin = (Spinner) findViewById(R.id.Citys);
         signup = (Button) findViewById(R.id.Signup);
         Emaill = (Button) findViewById(R.id.emaill);
-        Phone = (Button) findViewById(R.id.phone);
 
         Cpp = (CountryCodePicker) findViewById(R.id.CountryCode);
 
@@ -117,41 +110,6 @@ public class ChefRegisteration extends AppCompatActivity {
             }
         });
 
-//        Cityspin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                Object value = parent.getItemAtPosition(position);
-//                cityy = value.toString().trim();
-//                if (cityy.equals("Mumbai")) {
-//                    ArrayList<String> listt = new ArrayList<>();
-//                    for (String text : State3) {
-//                        listt.add(text);
-//                    }
-//                    ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(ChefRegisteration.this, android.R.layout.simple_spinner_item, listt);
-//                }
-//
-//                if (cityy.equals("Pune")) {
-//                    ArrayList<String> listt = new ArrayList<>();
-//                    for (String text : State4) {
-//                        listt.add(text);
-//                    }
-//                    ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(ChefRegisteration.this, android.R.layout.simple_spinner_item, listt);
-//                }
-//
-//                if (cityy.equals("Aurangabad")) {
-//                    ArrayList<String> listt = new ArrayList<>();
-//                    for (String text : State5) {
-//                        listt.add(text);
-//                    }
-//                    ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(ChefRegisteration.this, android.R.layout.simple_spinner_item, listt);
-//                }
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
 
 
         databaseReference = firebaseDatabase.getInstance().getReference("Chef");
@@ -273,17 +231,6 @@ public class ChefRegisteration extends AppCompatActivity {
                 finish();
             }
         });
-
-        Phone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent e = new Intent(ChefRegisteration.this, Chefloginphone.class);
-                startActivity(e);
-                finish();
-            }
- });
-
 
     }
 

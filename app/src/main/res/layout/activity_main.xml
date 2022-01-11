@@ -21,10 +21,11 @@
         app:layout_constraintVertical_bias="0.499" />
 
     <TextView
+        android:id="@+id/logo_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/logo_text"
-        android:text="Lorem Ipsum"
+        android:fontFamily="cursive"
+        android:text="Food Order"
         android:textColor="@color/black"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"

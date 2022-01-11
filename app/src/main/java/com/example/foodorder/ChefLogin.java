@@ -22,8 +22,7 @@ public class ChefLogin extends AppCompatActivity {
 
 
     TextInputLayout email, pass;
-    Button Signout, Signinphone;
-    TextView Forgotpassword;
+    Button Signout, SignUp;
     TextView txt;
     FirebaseAuth FAuth;
     String em;
@@ -39,8 +38,7 @@ public class ChefLogin extends AppCompatActivity {
             pass = (TextInputLayout) findViewById(R.id.Lpassword);
             Signout = (Button) findViewById(R.id.button4);
             txt = (TextView) findViewById(R.id.textView3);
-            Forgotpassword = (TextView) findViewById(R.id.forgotpass);
-            Signinphone = (Button) findViewById(R.id.btnphone);
+            SignUp = (Button) findViewById(R.id.btn_sign_up);
 
 
             FAuth = FirebaseAuth.getInstance();
@@ -89,31 +87,10 @@ public class ChefLogin extends AppCompatActivity {
                 }
             });
 
-            txt.setOnClickListener(new View.OnClickListener() {
+            SignUp.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-                    Intent Register = new Intent(ChefLogin.this, ChefRegisteration.class);
-                    startActivity(Register);
-                    finish();
-
-                }
-            });
-
-            Forgotpassword.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent a = new Intent(ChefLogin.this, ChefForgotPassword.class);
-                    startActivity(a);
-                    finish();
-
-                }
-            });
-
-            Signinphone.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent q = new Intent(ChefLogin.this, Chefloginphone.class);
+                    Intent q = new Intent(ChefLogin.this, ChefRegisteration.class);
                     startActivity(q);
                     finish();
                 }

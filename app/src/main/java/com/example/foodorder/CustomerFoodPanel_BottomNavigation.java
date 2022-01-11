@@ -80,13 +80,13 @@ public class CustomerFoodPanel_BottomNavigation extends AppCompatActivity implem
                 fragment = new CustomerCartFragment();
                 break;
 
-            case R.id.Order:
-                fragment = new CustomerOrdersFragment();
-                break;
-
-            case R.id.Track:
-                fragment = new CustomerTrackFragment();
-                break;
+//            case R.id.Order:
+//                fragment = new CustomerOrdersFragment();
+//                break;
+//
+//            case R.id.Track:
+//                fragment = new CustomerTrackFragment();
+//                break;
 
             case R.id.Profile:
                 fragment = new CustomerProfileFragment();

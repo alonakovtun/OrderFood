@@ -34,16 +34,10 @@ public class Registeration extends AppCompatActivity {
     String[] State2 = {"City1", "City2", "City3"};
 
 
-    String[] State3 = {"City1", "City2","City3", "City4", "City5", "City6"};
-
-
-    String[] State4 = {"City1", "City2", " City3", "City4", "City5"};
-    String[] State5 = {"City1", "City2"};
-
 
     TextInputLayout fname, lname, localadd, emaill, pass, cmpass, Mobileno;
-    Spinner statespin, City, Suburban;
-    Button Signin, Email, Phone;
+    Spinner statespin, City;
+    Button Signin, Email;
     FirebaseAuth FAuth;
     DatabaseReference databaseReference;
     FirebaseDatabase firebaseDatabase;
@@ -82,7 +76,6 @@ public class Registeration extends AppCompatActivity {
             Mobileno = (TextInputLayout) findViewById(R.id.Mobilenumber);
             Cpp = (CountryCodePicker) findViewById(R.id.CountryCode);
             Email = (Button) findViewById(R.id.emaill);
-            Phone = (Button) findViewById(R.id.phone);
 
 
             statespin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -108,47 +101,6 @@ public class Registeration extends AppCompatActivity {
 
                         City.setAdapter(arrayAdapter);
                     }
-
-                }
-
-                @Override
-                public void onNothingSelected(AdapterView<?> parent) {
-
-                }
-            });
-
-            City.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    Object value = parent.getItemAtPosition(position);
-                    cityy = value.toString().trim();
-                    if (cityy.equals("State3")) {
-                        ArrayList<String> listt = new ArrayList<>();
-                        for (String text : State3) {
-                            listt.add(text);
-                        }
-                        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(Registeration.this, android.R.layout.simple_spinner_item, listt);
-                        Suburban.setAdapter(arrayAdapter);
-                    }
-
-                    if (cityy.equals("State4")) {
-                        ArrayList<String> listt = new ArrayList<>();
-                        for (String text : State4) {
-                            listt.add(text);
-                        }
-                        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(Registeration.this, android.R.layout.simple_spinner_item, listt);
-                        Suburban.setAdapter(arrayAdapter);
-                    }
-
-                    if (cityy.equals("State5")) {
-                        ArrayList<String> listt = new ArrayList<>();
-                        for (String text : State5) {
-                            listt.add(text);
-                        }
-                        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(Registeration.this, android.R.layout.simple_spinner_item, listt);
-                        Suburban.setAdapter(arrayAdapter);
-                    }
-
 
                 }
 
@@ -267,18 +219,6 @@ public class Registeration extends AppCompatActivity {
                 finish();
             }
         });
-
-        Phone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent e = new Intent(Registeration.this, LoginPhone.class);
-                startActivity(e);
-                finish();
-            }
-        });
-
-
     }
 
     String emailpattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
@@ -326,7 +266,7 @@ public class Registeration extends AppCompatActivity {
             Mobileno.setErrorEnabled(true);
             Mobileno.setError("Mobile number is required");
         } else {
-            if (mobileno.length() < 10) {
+            if (mobileno.length() < 6) {
                 Mobileno.setErrorEnabled(true);
                 Mobileno.setError("Invalid mobile number");
             } else {

@@ -63,19 +63,19 @@
             android:textColor="#FFFFFF"
             app:backgroundTint="#EC3F3F" />
 
-        <Button
-            android:id="@+id/signWithPhone"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/btnblue"
-            android:drawableLeft="@drawable/ic_baseline_local_phone_24"
-            android:gravity="center"
-            android:paddingLeft="10dp"
-            android:text="SignIn with Phone "
-            android:textColor="#FFFFFF"
-            app:backgroundTint="#3E61CC" />
+<!--        <Button-->
+<!--            android:id="@+id/signWithPhone"-->
+<!--            android:layout_width="220dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:background="@drawable/btnblue"-->
+<!--            android:drawableLeft="@drawable/ic_baseline_local_phone_24"-->
+<!--            android:gravity="center"-->
+<!--            android:paddingLeft="10dp"-->
+<!--            android:text="SignIn with Phone "-->
+<!--            android:textColor="#FFFFFF"-->
+<!--            app:backgroundTint="#3E61CC" />-->
 
         <LinearLayout
             android:layout_width="wrap_content"

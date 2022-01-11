@@ -209,7 +209,7 @@ public class ChefOrdertobePrepareView extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 ChefWaitingOrders1 chefWaitingOrders1 = dataSnapshot.getValue(ChefWaitingOrders1.class);
-                grandtotal.setText("₹ " + chefWaitingOrders1.getGrandTotalPrice());
+                grandtotal.setText("$ " + chefWaitingOrders1.getGrandTotalPrice());
                 note.setText(chefWaitingOrders1.getNote());
                 address.setText(chefWaitingOrders1.getAddress());
                 name.setText(chefWaitingOrders1.getName());

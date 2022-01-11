@@ -21,7 +21,7 @@ public class ChooseOne extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_one);
         Chef = (Button) findViewById(R.id.chef);
-        DeliveryPerson = (Button) findViewById(R.id.delivery);
+//        DeliveryPerson = (Button) findViewById(R.id.delivery);
         Customer = (Button) findViewById(R.id.customer);
         AnimationDrawable animationDrawable = new AnimationDrawable();
         animationDrawable.addFrame(getResources().getDrawable(R.drawable.bghome2), 3000);
@@ -56,11 +56,11 @@ public class ChooseOne extends AppCompatActivity {
                     startActivity(loginemail);
                     finish();
                 }
-                if (type.equals("Phone")) {
-                    Intent loginphone = new Intent(ChooseOne.this, Chefloginphone.class);
-                    startActivity(loginphone);
-                    finish();
-                }
+//                if (type.equals("Phone")) {
+//                    Intent loginphone = new Intent(ChooseOne.this, Chefloginphone.class);
+//                    startActivity(loginphone);
+//                    finish();
+//                }
                 if (type.equals("SignUp")) {
                     Intent Register = new Intent(ChooseOne.this, ChefRegisteration.class);
                     startActivity(Register);
@@ -79,11 +79,11 @@ public class ChooseOne extends AppCompatActivity {
                     startActivity(loginemailcust);
                     finish();
                 }
-                if (type.equals("Phone")) {
-                    Intent loginphonecust = new Intent(ChooseOne.this, LoginPhone.class);
-                    startActivity(loginphonecust);
-                    finish();
-                }
+//                if (type.equals("Phone")) {
+//                    Intent loginphonecust = new Intent(ChooseOne.this, LoginPhone.class);
+//                    startActivity(loginphonecust);
+//                    finish();
+//                }
                 if (type.equals("SignUp")) {
                     Intent Registercust = new Intent(ChooseOne.this, Registeration.class);
                     startActivity(Registercust);
@@ -91,24 +91,24 @@ public class ChooseOne extends AppCompatActivity {
             }
         });
 
-        DeliveryPerson.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (type.equals("SignUp")) {
-                    Intent Registerdelivery = new Intent(ChooseOne.this, Delivery_registeration.class);
-                    startActivity(Registerdelivery);
-                }
-                if (type.equals("Phone")) {
-                    Intent loginphone = new Intent(ChooseOne.this, Delivery_LoginPhone.class);
-                    startActivity(loginphone);
-                    finish();
-                }
-                if (type.equals("Email")) {
-                    Intent loginemail = new Intent(ChooseOne.this, Delivery_Login.class);
-                    startActivity(loginemail);
-                    finish();
-                }
-            }
-        });
+//        DeliveryPerson.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (type.equals("SignUp")) {
+//                    Intent Registerdelivery = new Intent(ChooseOne.this, Delivery_registeration.class);
+//                    startActivity(Registerdelivery);
+//                }
+//                if (type.equals("Phone")) {
+//                    Intent loginphone = new Intent(ChooseOne.this, Delivery_LoginPhone.class);
+//                    startActivity(loginphone);
+//                    finish();
+//                }
+//                if (type.equals("Email")) {
+//                    Intent loginemail = new Intent(ChooseOne.this, Delivery_Login.class);
+//                    startActivity(loginemail);
+//                    finish();
+//                }
+//            }
+//        });
     }
 }

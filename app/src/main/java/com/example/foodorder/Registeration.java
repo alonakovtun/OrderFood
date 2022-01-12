@@ -169,13 +169,9 @@ public class Registeration extends AppCompatActivity {
                                                                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                                                     @Override
                                                                     public void onClick(DialogInterface dialog, int which) {
-
                                                                         dialog.dismiss();
-                                                                        String phonenumber = Cpp.getSelectedCountryCodeWithPlus() + mobileno;
-                                                                        Intent b = new Intent(Registeration.this, VerifyPhone.class);
-                                                                        b.putExtra("phonenumber", phonenumber);
+                                                                        Intent b = new Intent(Registeration.this, Login.class);
                                                                         startActivity(b);
-
                                                                     }
                                                                 });
                                                                 AlertDialog alert = builder.create();

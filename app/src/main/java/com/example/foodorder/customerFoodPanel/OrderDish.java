@@ -34,9 +34,8 @@ public class OrderDish extends AppCompatActivity {
 
 
     String RandomId, ChefID;
-    ImageView imageView;
     ElegantNumberButton additem;
-    TextView Foodname, ChefName, ChefLoaction, FoodQuantity, FoodPrice, FoodDescription;
+    TextView Foodname, ChefName, FoodQuantity, FoodPrice, FoodDescription;
     DatabaseReference databaseReference, dataaa, chefdata, reference, data, dataref;
     String State, City, Sub, dishname;
     int dishprice;
@@ -51,11 +50,9 @@ public class OrderDish extends AppCompatActivity {
 
         Foodname = (TextView) findViewById(R.id.food_name);
         ChefName = (TextView) findViewById(R.id.chef_name);
-//        ChefLoaction = (TextView) findViewById(R.id.chef_location);
         FoodQuantity = (TextView) findViewById(R.id.food_quantity);
         FoodPrice = (TextView) findViewById(R.id.food_price);
         FoodDescription = (TextView) findViewById(R.id.food_description);
-        imageView = (ImageView) findViewById(R.id.image);
         additem = (ElegantNumberButton) findViewById(R.id.number_btn);
 
         final String userid = FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -83,7 +80,6 @@ public class OrderDish extends AppCompatActivity {
                         FoodDescription.setText(Html.fromHtml(ss));
                         String pri = "<b>" + "Price: $ " + "</b>" + updateDishModel.getPrice();
                         FoodPrice.setText(Html.fromHtml(pri));
-                        Glide.with(OrderDish.this).load(updateDishModel.getImageURL()).into(imageView);
 
                         chefdata = FirebaseDatabase.getInstance().getReference("Chef").child(ChefID);
                         chefdata.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -94,7 +90,6 @@ public class OrderDish extends AppCompatActivity {
                                 String name = "<b>" + "Chef Name: " + "</b>" + chef.getFname() + " " + chef.getLname();
                                 ChefName.setText(Html.fromHtml(name));
                                 String loc = "<b>" + "Location: " + "</b>" + chef.getSuburban();
-//                                ChefLoaction.setText(Html.fromHtml(loc));
                                 custID = FirebaseAuth.getInstance().getCurrentUser().getUid();
                                 databaseReference = FirebaseDatabase.getInstance().getReference("Cart").child("CartItems").child(custID).child(RandomId);
                                 databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {

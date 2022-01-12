@@ -42,7 +42,6 @@ public class CustomerHomeAdapter extends RecyclerView.Adapter<CustomerHomeAdapte
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
 
         final UpdateDishModel updateDishModel=updateDishModellist.get(position);
-        Glide.with(mcontext).load(updateDishModel.getImageURL()).into(holder.imageView);
         holder.Dishname.setText(updateDishModel.getDishes());
         updateDishModel.getRandomUID();
         updateDishModel.getChefId();
@@ -68,16 +67,12 @@ public class CustomerHomeAdapter extends RecyclerView.Adapter<CustomerHomeAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView imageView;
         TextView Dishname,price;
-//        ElegantNumberButton additem;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            imageView=itemView.findViewById(R.id.menu_image);
             Dishname=itemView.findViewById(R.id.dishname);
             price=itemView.findViewById(R.id.dishprice);
-//            additem=itemView.findViewById(R.id.number_btn);
 
 
         }

@@ -219,94 +219,9 @@ public class ChefPendingOrdersAdapter extends RecyclerView.Adapter<ChefPendingOr
             }
         });
 
-        holder.Reject.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                DatabaseReference Reference = FirebaseDatabase.getInstance().getReference("ChefPendingOrders").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(random).child("Dishes");
-                Reference.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                            final ChefPendingOrders chefPendingOrders = snapshot.getValue(ChefPendingOrders.class);
-                            userid = chefPendingOrders.getUserId();
-                            dishid = chefPendingOrders.getDishId();
-                        }
-                        FirebaseDatabase.getInstance().getReference().child("Tokens").child(userid).child("token").addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                String usertoken = dataSnapshot.getValue(String.class);
-//                                sendNotifications(usertoken, "Order Rejected", "Your Order has been Rejected by the Chef due to some Circumstances", "Home");
-                                FirebaseDatabase.getInstance().getReference("CustomerPendingOrders").child(userid).child(random).child("Dishes").removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-
-                                        FirebaseDatabase.getInstance().getReference("CustomerPendingOrders").child(userid).child(random).child("OtherInformation").removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
-                                            @Override
-                                            public void onComplete(@NonNull Task<Void> task) {
-
-                                                FirebaseDatabase.getInstance().getReference("ChefPendingOrders").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(random).child("Dishes").removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                    @Override
-                                                    public void onComplete(@NonNull Task<Void> task) {
-
-                                                        FirebaseDatabase.getInstance().getReference("ChefPendingOrders").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(random).child("OtherInformation").removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                            @Override
-                                                            public void onSuccess(Void aVoid) {
-                                                                FirebaseDatabase.getInstance().getReference("AlreadyOrdered").child(userid).child("isOrdered").setValue("false");
-                                                            }
-                                                        });
-
-                                                    }
-                                                });
-
-                                            }
-                                        });
-
-                                    }
-                                });
-
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                            }
-                        });
-
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-
-
-            }
-        });
     }
 
-//    private void sendNotifications(String usertoken, String title, String message, String order) {
-//
-//        Data data = new Data(title, message, order);
-//        NotificationSender sender = new NotificationSender(data, usertoken);
-//        apiService.sendNotification(sender).enqueue(new Callback<MyResponse>() {
-//            @Override
-//            public void onResponse(Call<MyResponse> call, Response<MyResponse> response) {
-//                if (response.code() == 200) {
-//                    if (response.body().success != 1) {
-//                        Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<MyResponse> call, Throwable t) {
-//
-//            }
-//        });
-//
-//    }
 
     @Override
     public int getItemCount() {

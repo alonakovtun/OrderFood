@@ -50,7 +50,7 @@ public class CustomerCartFragment extends Fragment {
     DatabaseReference databaseReference, data, reference, ref, getRef, dataa;
     public static TextView grandt;
     Button remove, placeorder;
-    String address, Addnote;
+    String address;
     String DishId, RandomUId, ChefId;
     private ProgressDialog progressDialog;
 //    private APIService apiService;
@@ -148,7 +148,6 @@ public class CustomerCartFragment extends Fragment {
                                                 LayoutInflater inflater = getActivity().getLayoutInflater();
                                                 View view = inflater.inflate(R.layout.enter_address, null);
                                                 final EditText localaddress = (EditText) view.findViewById(R.id.LA);
-                                                final EditText addnote = (EditText) view.findViewById(R.id.addnote);
                                                 RadioGroup group = (RadioGroup) view.findViewById(R.id.grp);
                                                 final RadioButton home = (RadioButton) view.findViewById(R.id.HA);
                                                 final RadioButton other = (RadioButton) view.findViewById(R.id.OA);
@@ -183,7 +182,6 @@ public class CustomerCartFragment extends Fragment {
                                                                     final Cart cart1 = dataSnapshot1.getValue(Cart.class);
                                                                     DishId = cart1.getDishID();
                                                                     address = localaddress.getText().toString().trim();
-                                                                    Addnote = addnote.getText().toString().trim();
                                                                     final HashMap<String, String> hashMap = new HashMap<>();
                                                                     hashMap.put("ChefId", cart1.getChefId());
                                                                     hashMap.put("DishID", cart1.getDishID());
@@ -204,7 +202,6 @@ public class CustomerCartFragment extends Fragment {
                                                                         hashMap1.put("GrandTotalPrice", String.valueOf(grandtotal));
                                                                         hashMap1.put("MobileNumber", customer.getMobileno());
                                                                         hashMap1.put("Name", customer.getFirstName() + " " + customer.getLastName());
-                                                                        hashMap1.put("Note", Addnote);
                                                                         FirebaseDatabase.getInstance().getReference("CustomerPendingOrders").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(RandomUId).child("OtherInformation").setValue(hashMap1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                                             @Override
                                                                             public void onComplete(@NonNull Task<Void> task) {
@@ -364,27 +361,5 @@ public class CustomerCartFragment extends Fragment {
         });
 
     }
-
-
-//    private void sendNotifications(String usertoken, String title, String message, String order) {
-//
-//        Data data = new Data(title, message, order);
-//        NotificationSender sender = new NotificationSender(data, usertoken);
-//        apiService.sendNotification(sender).enqueue(new Callback<MyResponse>() {
-//            @Override
-//            public void onResponse(Call<MyResponse> call, Response<MyResponse> response) {
-//                if (response.code() == 200) {
-//                    if (response.body().success != 1) {
-//                        Toast.makeText(getContext(), "Failed", Toast.LENGTH_SHORT).show();
-//                    }
-//                }
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<MyResponse> call, Throwable t) {
-//
-//            }
-//        });
-//    }
+    
 }

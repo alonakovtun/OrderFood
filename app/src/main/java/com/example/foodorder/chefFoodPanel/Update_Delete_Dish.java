@@ -93,24 +93,6 @@ public class Update_Delete_Dish extends AppCompatActivity {
                 City = chefc.getCity();
                 Sub = chefc.getSuburban();
 
-//                Update_dish.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        description = desc.getEditText().getText().toString().trim();
-//                        quantity = qty.getEditText().getText().toString().trim();
-//                        price = pri.getEditText().getText().toString().trim();
-//
-//
-////                        if (isValid()) {
-////                            if (imageuri != null) {
-////                                uploadImage();
-////                            } else {
-////                                updatedesc(dburi);
-////                            }
-////                        }
-//                    }
-//                });
-
                 Delete_dish.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -177,12 +159,6 @@ public class Update_Delete_Dish extends AppCompatActivity {
                 databaseReference = firebaseDatabase.getInstance().getReference("FoodSupplyDetails");
                 storage = FirebaseStorage.getInstance();
                 storageReference = storage.getReference();
-//                imageButton.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        onSelectImageClick(v);
-//                    }
-//                });
             }
 
             @Override
@@ -229,43 +205,6 @@ public class Update_Delete_Dish extends AppCompatActivity {
     }
 
 
-//    private void uploadImage() {
-//
-//        if (imageuri != null) {
-//
-//            progressDialog.setTitle("Uploading...");
-//            progressDialog.show();
-//            RandomUId = UUID.randomUUID().toString();
-//            ref = storageReference.child(RandomUId);
-//            ref.putFile(imageuri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-//                @Override
-//                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-//                    ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-//                        @Override
-//                        public void onSuccess(Uri uri) {
-//                            updatedesc(String.valueOf(uri));
-//                        }
-//                    });
-//                }
-//
-//            }).addOnFailureListener(new OnFailureListener() {
-//                @Override
-//                public void onFailure(@NonNull Exception e) {
-//                    progressDialog.dismiss();
-//                    Toast.makeText(Update_Delete_Dish.this, "Failed : " + e.getMessage(), Toast.LENGTH_LONG).show();
-//                }
-//            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-//                @Override
-//                public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-//
-//                    double progress = (100.0 * taskSnapshot.getBytesTransferred() / taskSnapshot.getTotalByteCount());
-//                    progressDialog.setMessage("Uploaded " + (int) progress + "%");
-//                    progressDialog.setCanceledOnTouchOutside(false);
-//                }
-//            });
-//        }
-//    }
-
     private void updatedesc(String uri) {
         ChefId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         FoodSupplyDetails info = new FoodSupplyDetails(dishes, quantity, price, description, "https://images-gmi-pmc.edge-generalmills.com/75a7343a-1520-4e95-a13f-e61b5fc5b741.jpg", ID, ChefId);
@@ -280,61 +219,4 @@ public class Update_Delete_Dish extends AppCompatActivity {
         });
     }
 
-
-//    private void onSelectImageClick(View v) {
-//
-//        CropImage.startPickImageActivity(this);
-//    }
-
-//    @Override
-//    @SuppressLint("NewApi")
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//
-//
-//        if (requestCode == CropImage.PICK_IMAGE_CHOOSER_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-//            imageuri = CropImage.getPickImageResultUri(this, data);
-//
-//            if (CropImage.isReadExternalStoragePermissionsRequired(this, imageuri)) {
-//                mCropimageuri = imageuri;
-//                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 0);
-//
-//            } else {
-//
-//                startCropImageActivity(imageuri);
-//            }
-//        }
-//
-//        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-//            CropImage.ActivityResult result = CropImage.getActivityResult(data);
-//            if (resultCode == RESULT_OK) {
-//                ((ImageButton) findViewById(R.id.imageupload)).setImageURI(result.getUri());
-//                Toast.makeText(this, "Cropped Successfully" + result.getSampleSize(), Toast.LENGTH_SHORT).show();
-//            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-//                Toast.makeText(this, "cropping failed" + result.getError(), Toast.LENGTH_SHORT).show();
-//            }
-//        }
-//        super.onActivityResult(requestCode, resultCode, data);
-//    }
-
-
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-//                                           @NonNull int[] grantResults) {
-//
-//        if (mCropimageuri != null && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//            startCropImageActivity(mCropimageuri);
-//        } else {
-//            Toast.makeText(this, "cancelling,required permission not granted", Toast.LENGTH_SHORT).show();
-//        }
-//    }
-//
-//    private void startCropImageActivity(Uri imageuri) {
-//
-//        CropImage.activity(imageuri)
-//                .setGuidelines(CropImageView.Guidelines.ON)
-//                .setMultiTouchEnabled(true)
-//                .start(this);
-//
-//
-//    }
 }

@@ -35,21 +35,10 @@ import java.util.HashMap;
 
 public class CustomerProfileFragment extends Fragment {
 
-//
-//    String[] State1 = {"City1", "City2", "City3"};
-//    String[] State2 = {"City1", "City2", "City3"};
-//
-//
-//    String[] State3 = {"City1", "City2","City3", "City4", "City5", "City6"};
-//
-//
-//    String[] State4 = {"City1", "City2", " City3", "City4", "City5"};
-//    String[] State5 = {"City1", "City2"};
-
 
     EditText firstname, lastname, address;
 
-    TextView mobileno, Email;
+    TextView Email;
     Button Update;
     LinearLayout password, LogOut;
     DatabaseReference databaseReference, data;
@@ -68,7 +57,6 @@ public class CustomerProfileFragment extends Fragment {
         address = (EditText) v.findViewById(R.id.address);
         Email = (TextView) v.findViewById(R.id.emailID);
 
-        mobileno = (TextView) v.findViewById(R.id.mobilenumber);
         Update = (Button) v.findViewById(R.id.update);
         password = (LinearLayout) v.findViewById(R.id.passwordlayout);
         LogOut = (LinearLayout) v.findViewById(R.id.logout_layout);
@@ -83,92 +71,8 @@ public class CustomerProfileFragment extends Fragment {
                 firstname.setText(customer.getFirstName());
                 lastname.setText(customer.getLastName());
                 address.setText(customer.getLocalAddress());
-                mobileno.setText(customer.getMobileno());
                 Email.setText(customer.getEmailID());
-//                State.setSelection(getIndexByString(State, customer.getState()));
-//                State.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//                    @Override
-//                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                        Object value = parent.getItemAtPosition(position);
-//                        statee = value.toString().trim();
-//                        if (statee.equals("State1")) {
-//                            ArrayList<String> list = new ArrayList<>();
-//                            for (String text : State1) {
-//                                list.add(text);
-//                            }
-//                            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, list);
-//                            City.setAdapter(arrayAdapter);
-//                        }
-//                        if (statee.equals("State2")) {
-//                            ArrayList<String> list = new ArrayList<>();
-//                            for (String text : State2) {
-//                                list.add(text);
-//                            }
-//                            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, list);
-//
-//                            City.setAdapter(arrayAdapter);
-//                        }
-//                        City.setSelection(getIndexByString(City, customer.getCity()));
-//                    }
-//
-//                    @Override
-//                    public void onNothingSelected(AdapterView<?> parent) {
-//
-//                    }
-//                });
-//
-//                City.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//                    @Override
-//                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                        Object value = parent.getItemAtPosition(position);
-//                        cityy = value.toString().trim();
-//                        if (cityy.equals("State3")) {
-//                            ArrayList<String> listt = new ArrayList<>();
-//                            for (String text : State3) {
-//                                listt.add(text);
-//                            }
-//                            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, listt);
-//                            Suburban.setAdapter(arrayAdapter);
-//                        }
-//
-//                        if (cityy.equals("State4")) {
-//                            ArrayList<String> listt = new ArrayList<>();
-//                            for (String text : State4) {
-//                                listt.add(text);
-//                            }
-//                            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, listt);
-//                            Suburban.setAdapter(arrayAdapter);
-//                        }
-//
-//                        if (cityy.equals("State5")) {
-//                            ArrayList<String> listt = new ArrayList<>();
-//                            for (String text : State5) {
-//                                listt.add(text);
-//                            }
-//                            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, listt);
-//                            Suburban.setAdapter(arrayAdapter);
-//                        }
-//                        Suburban.setSelection(getIndexByString(Suburban, customer.getSuburban()));
-//                    }
-//
-//                    @Override
-//                    public void onNothingSelected(AdapterView<?> parent) {
-//
-//                    }
-//                });
-//
-//                Suburban.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//                    @Override
-//                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                        Object value = parent.getItemAtPosition(position);
-//                        suburban = value.toString().trim();
-//                    }
-//
-//                    @Override
-//                    public void onNothingSelected(AdapterView<?> parent) {
-//
-//                    }
-//                });
+
             }
 
             @Override
@@ -237,15 +141,6 @@ public class CustomerProfileFragment extends Fragment {
 
                 Intent intent = new Intent(getActivity(), CustomerPassword.class);
                 startActivity(intent);
-            }
-        });
-
-        mobileno.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent i = new Intent(getActivity(), CustomerPhonenumber.class);
-                startActivity(i);
             }
         });
 

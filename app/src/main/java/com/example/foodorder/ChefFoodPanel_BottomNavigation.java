@@ -10,15 +10,8 @@ import android.view.MenuItem;
 import com.example.foodorder.chefFoodPanel.ChefHomeFragment;
 import com.example.foodorder.chefFoodPanel.ChefPendingOrderFragment;
 import com.example.foodorder.chefFoodPanel.ChefProfileFragment;
-import com.example.foodorder.chefFoodPanel.ChefOrderFragment;
-
-import com.example.foodorder.R;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.iid.FirebaseInstanceId;
 
 public class ChefFoodPanel_BottomNavigation extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -34,8 +27,8 @@ public class ChefFoodPanel_BottomNavigation extends AppCompatActivity implements
         if (name != null) {
             if (name.equalsIgnoreCase("Orderpage")) {
                 loadcheffragment(new ChefPendingOrderFragment());
-            } else if (name.equalsIgnoreCase("Confirmpage")) {
-                loadcheffragment(new ChefOrderFragment());
+//            } else if (name.equalsIgnoreCase("Confirmpage")) {
+//                loadcheffragment(new ChefOrderFragment());
             } else if (name.equalsIgnoreCase("AcceptOrderpage")) {
                 loadcheffragment(new ChefHomeFragment());
             } else if (name.equalsIgnoreCase("Deliveredpage")) {

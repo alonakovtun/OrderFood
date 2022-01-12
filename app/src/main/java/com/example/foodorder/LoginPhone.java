@@ -17,7 +17,7 @@ public class LoginPhone extends AppCompatActivity {
 
     EditText num;
     TextView txtsignup;
-    Button sendotp,signinemail;
+    Button signinemail;
     CountryCodePicker cpp;
     FirebaseAuth FAuth;
     String numberr;
@@ -28,26 +28,11 @@ public class LoginPhone extends AppCompatActivity {
         setContentView(R.layout.activity_login_phone);
 
         num=(EditText)findViewById(R.id.number);
-        sendotp=(Button)findViewById(R.id.otp);
         cpp=(CountryCodePicker)findViewById(R.id.CountryCode);
         signinemail=(Button)findViewById(R.id.btnEmail);
         txtsignup=(TextView)findViewById(R.id.acsignup);
 
         FAuth=FirebaseAuth.getInstance();
-
-        sendotp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                numberr=num.getText().toString().trim();
-                String phonenumber= cpp.getSelectedCountryCodeWithPlus() + numberr;
-                Intent b=new Intent(LoginPhone.this,sendotp.class);
-                b.putExtra("phonenumber",phonenumber);
-                startActivity(b);
-                finish();
-
-            }
-        });
 
         txtsignup.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -15,19 +15,7 @@
         android:theme="@style/Theme.FoodOrder"
         tools:replace="android:theme">
         <activity
-            android:name=".customerFoodPanel.CustomerPhonenumber"
-            android:exported="false" />
-        <activity
             android:name=".customerFoodPanel.CustomerPassword"
-            android:exported="false" />
-        <activity
-            android:name=".customerFoodPanel.CustomerPaymentOTP"
-            android:exported="false" />
-        <activity
-            android:name=".customerFoodPanel.CustomerOnlinePayment"
-            android:exported="false" />
-        <activity
-            android:name=".customerFoodPanel.CustomerPayment"
             android:exported="false" />
         <activity
             android:name=".chefFoodPanel.Chef_order_dishes"
@@ -39,64 +27,16 @@
             android:name=".chefFoodPanel.Update_Delete_Dish"
             android:exported="false" />
         <activity
-            android:name=".chefFoodPanel.ChefOrdertobePrepareView"
-            android:exported="false" />
-        <activity
-            android:name=".chefFoodPanel.ChefPreparedOrderView"
-            android:exported="false" />
-        <activity
             android:name=".chefFoodPanel.ChefPreparedOrder"
-            android:exported="false" />
-        <activity
-            android:name=".chefFoodPanel.ChefOrderTobePrepared"
             android:exported="false" />
         <activity
             android:name=".chefFoodPanel.Chef_PostDish"
             android:exported="false" />
         <activity
-            android:name=".Delivery_SendOtp"
-            android:exported="false" />
-        <activity
-            android:name=".Delivery_ForgotPassword"
-            android:exported="false" />
-        <activity
-            android:name=".Delivery_FoodPanelBottomNavigation"
-            android:exported="false" />
-        <activity
-            android:name=".Delivery_VerifyPhone"
-            android:exported="false" />
-        <activity
-            android:name=".ForgotPassword"
-            android:exported="false" />
-        <activity
             android:name=".CustomerFoodPanel_BottomNavigation"
             android:exported="false" />
         <activity
-            android:name=".sendotp"
-            android:exported="false" />
-        <activity
-            android:name=".VerifyPhone"
-            android:exported="false" />
-        <activity
-            android:name=".Chefsendotp"
-            android:exported="false" />
-        <activity
-            android:name=".ChefForgotPassword"
-            android:exported="false" />
-        <activity
             android:name=".ChefFoodPanel_BottomNavigation"
-            android:exported="false" />
-        <activity
-            android:name=".ChefVerifyPhone"
-            android:exported="false" />
-        <activity
-            android:name=".Delivery_Login"
-            android:exported="false" />
-        <activity
-            android:name=".Delivery_LoginPhone"
-            android:exported="false" />
-        <activity
-            android:name=".Delivery_registeration"
             android:exported="false" />
         <activity
             android:name=".Registeration"

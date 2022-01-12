@@ -11,14 +11,8 @@ import android.view.MenuItem;
 
 import com.example.foodorder.customerFoodPanel.CustomerCartFragment;
 import com.example.foodorder.customerFoodPanel.CustomerHomeFragment;
-import com.example.foodorder.customerFoodPanel.CustomerOrdersFragment;
 import com.example.foodorder.customerFoodPanel.CustomerProfileFragment;
-import com.example.foodorder.customerFoodPanel.CustomerTrackFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.iid.FirebaseInstanceId;
 
 public class CustomerFoodPanel_BottomNavigation extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -35,12 +29,12 @@ public class CustomerFoodPanel_BottomNavigation extends AppCompatActivity implem
         if (name != null) {
             if (name.equalsIgnoreCase("Homepage")) {
                 loadFragment(new CustomerHomeFragment());
-            } else if (name.equalsIgnoreCase("Preparingpage")) {
-                loadFragment(new CustomerTrackFragment());
-            } else if (name.equalsIgnoreCase("Preparedpage")) {
-                loadFragment(new CustomerTrackFragment());
-            } else if (name.equalsIgnoreCase("DeliverOrderpage")) {
-                loadFragment(new CustomerTrackFragment());
+//            } else if (name.equalsIgnoreCase("Preparingpage")) {
+//                loadFragment(new CustomerTrackFragment());
+//            } else if (name.equalsIgnoreCase("Preparedpage")) {
+//                loadFragment(new CustomerTrackFragment());
+//            } else if (name.equalsIgnoreCase("DeliverOrderpage")) {
+//                loadFragment(new CustomerTrackFragment());
             } else if (name.equalsIgnoreCase("ThankYoupage")) {
                 loadFragment(new CustomerHomeFragment());
             }
